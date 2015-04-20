@@ -46,6 +46,15 @@
         text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15); }
 
       h2 strong { color: #bbb; }
+      i.thumbs-up:before, i.thumbs-down:before { margin: 0 0.25em 0 0; opacity: 0.7; text-shadow: 3px 3px 1px rgba(5, 5, 5, 0.9); }
+      i.thumbs-up:before { content: "\1F44D"; color: green; }
+      i.thumbs-down:before { content: "\1F44E"; color: red; }
+      ul.nobullets li { list-style: none }
+      /*
+      img.fragment.current-visible { display: none }
+      img.fragment.current-visible.current-fragment { display: inherit }
+      */
+      img.transparent { border: none !important; background: none !important; }
     </style>
 
   </head>
@@ -67,16 +76,13 @@
           </aside>
         </section>
 
-        <section data-markdown data-background="http://www.valachnet.cz/lvanek/diy/old_story/computer.jpg">
-          <script type="text/template">
-            ## What is a **hobby computer**?
-
-            Note:
-
+        <section data-background="http://www.valachnet.cz/lvanek/diy/old_story/computer.jpg">
+          <h2>What is a <strong>hobby computer</strong>?</h2>
+          <aside class="notes">
             Around the time I was born, home computers were sold in kit form. 
-            
+
             You got circuit boards and a bag of parts.
-            
+
             You assembled the thing yourself and learned a bunch about hardware and software.
 
             This picture is of the Rum 80, a computer built from scratch in the 80s
@@ -84,53 +90,47 @@
             this guy made up his own kit.
 
             image credit - http://www.valachnet.cz/lvanek/diy/old_story/index.html
-          </script>
+          </aside>
         </section>
 
-        <section data-markdown data-background="http://www.sfreporter.com/santafe/imgs/media.images/9578/free-beer-splash.widea.jpg">
-          <script type="text/template">
-            ## What is **free**?
-
-            Note:
-
+        <section data-background="http://www.sfreporter.com/santafe/imgs/media.images/9578/free-beer-splash.widea.jpg">
+          <h2>What is <strong>free</strong>?</h2>
+          <aside class="notes">
             Lots of folks around here are familiar with free as in beer versus free as in speech.
 
             Well, the computers I'm talking about are the free beer. Your software is the free speech.
-
-            As I'll get to in just a bit, these computers are free with asterisks.
             
-            But, I think you can and should navigate these asterisks for your own benefit.
+            I think it's crucial to consider whether any particular offering of free beer 
+            helps you in your freedom of expression, or whether it serves to lock you in.
+
+            And of course, these computers are free with asterisks.
+
+            But, I think you can and should navigate these asterisks for fun and learning.
 
             image credit - http://www.sfreporter.com/santafe/article-7361-free-beer.html
-          </script>
+          </aside>
         </section>
 
-        <section data-markdown data-background="http://cdn.instructables.com/FWC/7DHY/FG6X1JRM/FWC7DHYFG6X1JRM.LARGE.jpg">
-          <script type="text/template">
-            ## What is **yours**?
-
-            Note:
-
-            If you can't fix it, you don't own it.
+        <section data-background="http://cdn.instructables.com/FWC/7DHY/FG6X1JRM/FWC7DHYFG6X1JRM.LARGE.jpg">
+          <h2>What is <strong>yours</strong>?</h2>
+          <aside class="notes">
+            And that leads me to the issue of what is yours. I've heard it said that if you can't fix it, you don't own it.
 
             In this case, what you can fix is your own software. Other people own the computers.
 
             image credit - http://www.instructables.com/id/Cheap-as-in-freeas-in-beer-Multi-Meter-Stand/
-          </script>
+          </aside>
         </section>
 
-        <section data-markdown data-background="https://pbs.twimg.com/media/CBMm8swW8AAwpz-.jpg:large">
-          <script type="text/template">
-            ## What is **the cloud**?
+        <section data-background="https://pbs.twimg.com/media/CBMm8swW8AAwpz-.jpg:large">
+          <h2>What is <strong>the cloud</strong>?</h2>
+          <aside class="notes">
+            So that brings me to the final bit, and what we need to keep in mind about the cloud in general.
 
-            Note:
-
-            Apropos of that, here's what you need to keep in mind about the cloud in general.
-
-            So, I guess, to be honest, maybe I should rename this talk...
+            In fact, to be honest, maybe I should rename this talk...
 
             image credit - https://twitter.com/kirschner/status/581851603076018176
-          </script>
+          </aside>
         </section>
 
         <section data-background="http://3.bp.blogspot.com/-IdLO7r33xlE/Tc1qXX5rJ_I/AAAAAAAAAFY/Rg2n-A7muV4/s1600/brotherbugs4.png">
@@ -139,104 +139,164 @@
             <small>by <a href="http://lmorchard.com">Les Orchard</a> / <a href="http://twitter.com/lmorchard">@lmorchard</a></small>
           </p>
           <aside class="notes">
-            In a way, this is kind of like abusing the free samples at the supermarket for lunch. 
+            And in borrowing these computers, of course you'll have to give them back someday.
+
+            But, like any borrowed tools, you can end up learning and making some useful things while you have them.
 
             image credit - http://yoo-hoo-queen.blogspot.com/2011/05/brother-bugs.html
           </aside>
         </section>
 
         <section>
-          <section data-markdown data-background="https://octodex.github.com/images/socialite.jpg">
-            <script type="text/template">
-              ## GitHub
+          <section data-background="https://octodex.github.com/images/socialite.jpg">
+            <h2>GitHub</h2>
+            <img class="fragment" src="img/github-my-activity.png" width="75%">
+            <aside class="notes">
+              One of the first things I want to do with the cloud is find a place to put my stuff. <br>
+              And, since most of my hobbies tend to result in software of some kind, GitHub comes in very handy. <br>
+              It's kind of like the Facebook or LiveJournal of code. <br>
+            </aside>
+          </section>
+          <section data-background="https://octodex.github.com/images/total-eclipse-of-the-octocat.jpg">
+            <h2>GitHub + Raspberry PI = &lt;3</h2>
+            <img src="img/github-raspiriments-2.png" width="75%" class="transparent">
+            <aside class="notes">
+              For example, when I was having fun hacking around with my Raspberry PI, I stashed all my code and experiments on GitHub. <br>
+              This turned out really nice, because it meant I could edit things easily on my laptop <br>
+              And when I sometimes wiped the SD card for the PI, it was really easy to just pull down a fresh clone of my code to get back to playing <br>
+              And since all of this is on the web, I could point friends at some some of the code to ask for advice or just show off <br>
+            </aside>
+          </section>
+          <section data-background="https://octodex.github.com/images/collabocats.jpg">
+            <h2>GitHub Pages</h2>
+            <img src="img/github-pages.png" width="75%">
+          </section>
+          <section data-background="https://octodex.github.com/images/collabocats.jpg">
+            <h2>GitHub Pages</h2>
+            <img src="img/github-pages-parsec-patrol.png" width="75%">
+            <aside class="notes">
+            </aside>
+          </section>
+          <section data-background="https://octodex.github.com/images/original.png">
+            <h2>GitHub</h2>
+            <ul class="nobullets">
+              <li class="fragment"><i class="thumbs-down"></i><strong>Git is hard</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Git is free as in speech</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>GitHub is free as in beer</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Your stuff stays yours</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>GitHub is very hackable</strong></li>
+            </ul>
+            <aside class="notes">
+              So, that's cool: I'm borrowing computers from the folks at GitHub to store my work and publish it on the web.<br>
 
-              Note:
-
+              Git is hard - But, you know, so were hobby computers. There are some GUI apps for git, 
+              but it's mainly a command line tool. To really unlock its power, you will need to learn it's strange ways. <br>
+              
+              Free - unlimited public repositories, no access limits. The only real catch is that they charge for private usage. <br>
+              
+              Yours - the nice thing about git is that it's a distributed system and 
+              you get backups almost for free because all of your stuff exists in its
+              entirety wherever you've made a clone <br>
+              
+              Hackable - github offers interesting APIs to access your data and use with other services<br>
+              
               image credit - https://octodex.github.com/
-            </script>
-          </section>
-          <section data-markdown data-background="https://octodex.github.com/images/total-eclipse-of-the-octocat.jpg">
-            <script type="text/template">
-              ## GitHub
-
-              * Butts
-            </script>
+            </aside>
           </section>
         </section>
 
-        <section data-markdown data-background="img/travis-ci.png">
-          <script type="text/template">
-            ## Travis CI
-
-            Note:
-
-            image credit - http://blog.travis-ci.com/2013-07-17-introducing-travis-our-new-mascot/
-          </script>
+        <section data-background="img/travis-ci.png">
+          <section>
+            <h2>Travis CI</h2>
+            <img class="fragment" src="img/travis-parsec-patrol.png" width="95%">
+            <aside class="notes">
+              image credit - http://blog.travis-ci.com/2013-07-17-introducing-travis-our-new-mascot/
+            </aside>
+          </section>
+          <section>
+            <h2>Travis CI + GitHub Pages = &lt;3</h2>
+            <img src="img/travis-github-pages.png" width="90%">
+            <aside class="notes">
+            </aside>
+          </section>
+          <section>
+            <h2>Travis CI</h2>
+            <ul class="nobullets">
+              <li class="fragment"><i class="thumbs-up"></i><strong>Free as in beer</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Works with GitHub</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Runs your code &amp; tests as-is</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Very hackable</strong></li>
+              <li class="fragment"><i class="thumbs-down"></i><strong>Slow during peak usage hours</strong></li>
+            </ul>
+            <aside class="notes">
+            </aside>
+          </section>
         </section>
 
-        <section>
-          <section data-markdown data-background="img/heroku.png">
-            <script type="text/template">
-              ## Heroku
-
-              <!-- <img src="https://www.herokucdn.com/deploy/button.png" width="25%"> -->
-
-              Note:
-
+        <section data-background="img/heroku.png">
+          <section>
+            <h2>Heroku</h2>
+            <aside class="notes">
               image credit - https://www.heroku.com/home
-            </script>
+            </aside>
+          </section>
+          <section>
+            <h2>Heroku + GitHub = &lt;3</h2>
+            <img src="img/heroku-deploy.png" width="90%" class="transparent">
+            <aside class="notes">
+            </aside>
+          </section>
+          <section>
+            <h2>Heroku</h2>
+            <ul class="nobullets">
+              <li class="fragment"><i class="thumbs-up"></i><strong>Free as in beer</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Works with GitHub</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Runs your code</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Very hackable</strong></li>
+              <li class="fragment"><i class="thumbs-down"></i><strong>Slow during peak usage hours</strong></li>
+            </ul>
+            <aside class="notes">
+            </aside>
           </section>
         </section>
 
         <section>
-          <section data-markdown data-background="img/c9.png">
-            <script type="text/template">
-              ## Cloud9
-
-              Note:
-
+          <section data-background="img/c9.png">
+            <h2>Cloud9</h2>
+            <aside class="notes">
               The free tier is like a personal Raspberry PI in the cloud.
-
               image credit - https://c9.io/
-            </script>
-          </section>
-        </section>
-
-        <section>
-          <!--<section data-markdown data-background="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/AmazonWebservices_Logo.svg/2000px-AmazonWebservices_Logo.svg.png">-->
-          <section data-markdown data-background="http://astoundcom.com/astound-communications/wp-content/uploads/2011/09/AStoundcom-Amazon-Web-Services.jpg">
-            <script type="text/template">
-              ## Amazon Web Services
-
-              Note:
-
-              image credit - http://www.astoundcom.com/comparing-cloud-providers%E2%80%99-pricing-models-to-ec2-%E2%80%A6-%E2%80%9Cthe-devil-is-in-the-details%E2%80%9D/
-            </script>
+            </aside>
           </section>
         </section>
 
         <section>
           <section data-background="https://lhshelpdesk.files.wordpress.com/2014/11/ifttt-banner.jpg">
             <h2>IFTTT</h2>
-
             <img class="fragment" src="http://decafbad.com/blog/images/2011/11/social-media-cyborg.png" width="50%">
-
             <aside class="notes">
               image credit - http://lhshelpdesk.com/2015/01/29/ifttt-by-matt-germano/
             </aside>
           </section>
         </section>
 
-          <section data-background="http://4.bp.blogspot.com/-tvFIO35pZmE/VL_ocTcNjXI/AAAAAAAABrU/Q3hykj8hhRE/s1600/suite_transparent_large.png">
-            <h2>Google Docs</h2>
+        <section data-background="http://4.bp.blogspot.com/-tvFIO35pZmE/VL_ocTcNjXI/AAAAAAAABrU/Q3hykj8hhRE/s1600/suite_transparent_large.png">
+          <h2>Google Docs</h2>
+          <p class="fragment"><img width="98%" data-src="img/eve-spreadsheet-formula.png"></p>
+          <p class="fragment"><img width="75%" data-src="img/eve-spreadsheet.png"></p>
+          <aside class="notes">
+            image credit - http://googledocs.blogspot.com/
+          </aside>
+        </section>
 
-            <p class="fragment"><img width="98%" data-src="img/eve-spreadsheet-formula.png"></p>
-            <p class="fragment"><img width="75%" data-src="img/eve-spreadsheet.png"></p>
-
+        <section>
+          <section data-background="http://astoundcom.com/astound-communications/wp-content/uploads/2011/09/AStoundcom-Amazon-Web-Services.jpg">
+            <h2>Amazon Web Services</h2>
             <aside class="notes">
-              image credit - http://googledocs.blogspot.com/
+              image credit - http://www.astoundcom.com/comparing-cloud-providers%E2%80%99-pricing-models-to-ec2-%E2%80%A6-%E2%80%9Cthe-devil-is-in-the-details%E2%80%9D/
             </aside>
           </section>
+        </section>
 
       </div>
 
