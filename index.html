@@ -115,9 +115,10 @@
           <h2>What is <strong>yours</strong>?</h2>
           <aside class="notes">
             And that leads me to the issue of what is yours. I've heard it said that if you can't fix it, you don't own it.
-
-            In this case, what you can fix is your own software. Other people own the computers.
-
+            <br>
+            I would also say that it's only yours if you can pick it up and move it somewhere else. 
+            At least, in the case of software. Houses might be a bit harder to move.
+            <br>
             image credit - http://www.instructables.com/id/Cheap-as-in-freeas-in-beer-Multi-Meter-Stand/
           </aside>
         </section>
@@ -125,10 +126,10 @@
         <section data-background="https://pbs.twimg.com/media/CBMm8swW8AAwpz-.jpg:large">
           <h2>What is <strong>the cloud</strong>?</h2>
           <aside class="notes">
-            So that brings me to the final bit, and what we need to keep in mind about the cloud in general.
-
+            So that brings me to what we need to keep in mind about the cloud in general.
+            <br>
             In fact, to be honest, maybe I should rename this talk...
-
+            <br>
             image credit - https://twitter.com/kirschner/status/581851603076018176
           </aside>
         </section>
@@ -139,10 +140,19 @@
             <small>by <a href="http://lmorchard.com">Les Orchard</a> / <a href="http://twitter.com/lmorchard">@lmorchard</a></small>
           </p>
           <aside class="notes">
-            And in borrowing these computers, of course you'll have to give them back someday.
-
-            But, like any borrowed tools, you can end up learning and making some useful things while you have them.
-
+            When you're using the cloud, that's what you're doing: You're borrowing other people's computers
+            and you'll have to give them back at some point. Often that time is measured in milliseconds.
+            <br>
+            But, whenever you have your hands on a tool, borrowed or not, you can end up learning
+            and making some useful things.
+            <br>
+            Really, what I'm going to attempt to do is describe an approach to
+            thinking about and evaluating cloud services:
+            If it's free, what's the catch?
+            Will you learn something useful in using it?
+            Can you walk away cleanly with stuff you've made and put it somewhere else?
+            Or, are you locked in and stuck when you have to give back what you've borrowed?
+            <br>
             image credit - http://yoo-hoo-queen.blogspot.com/2011/05/brother-bugs.html
           </aside>
         </section>
@@ -154,7 +164,7 @@
             <aside class="notes">
               One of the first things I want to do with the cloud is find a place to put my stuff. <br>
               And, since most of my hobbies tend to result in software of some kind, GitHub comes in very handy. <br>
-              It's kind of like the Facebook or LiveJournal of code. <br>
+              It's kind of like the Facebook of code, with activity streams and comments and such. <br>
             </aside>
           </section>
           <section data-background="https://octodex.github.com/images/total-eclipse-of-the-octocat.jpg">
@@ -180,19 +190,21 @@
           <section data-background="https://octodex.github.com/images/original.png">
             <h2>GitHub</h2>
             <ul class="nobullets">
-              <li class="fragment"><i class="thumbs-down"></i><strong>Git is hard</strong></li>
               <li class="fragment"><i class="thumbs-up"></i><strong>Git is free as in speech</strong></li>
               <li class="fragment"><i class="thumbs-up"></i><strong>GitHub is free as in beer</strong></li>
               <li class="fragment"><i class="thumbs-up"></i><strong>Your stuff stays yours</strong></li>
               <li class="fragment"><i class="thumbs-up"></i><strong>GitHub is very hackable</strong></li>
+              <li class="fragment"><i class="thumbs-down"></i><strong>Git is hard</strong></li>
             </ul>
             <aside class="notes">
               So, that's cool: I'm borrowing computers from the folks at GitHub to store my work and publish it on the web.<br>
 
               Git is hard - But, you know, so were hobby computers. There are some GUI apps for git, 
               but it's mainly a command line tool. To really unlock its power, you will need to learn it's strange ways. <br>
+
+              Git is free as in speech - in fact, it's the revision control system made for and used in the production of Linux <br>
               
-              Free - unlimited public repositories, no access limits. The only real catch is that they charge for private usage. <br>
+              Free beer - unlimited public repositories, no access limits. The only real catch is that they charge for private usage. <br>
               
               Yours - the nice thing about git is that it's a distributed system and 
               you get backups almost for free because all of your stuff exists in its
@@ -210,6 +222,18 @@
             <h2>Travis CI</h2>
             <img class="fragment" src="img/travis-parsec-patrol.png" width="95%">
             <aside class="notes">
+              So, the intent of Travis CI is run your tests for your code.
+              <br>
+              What you can see in this screenshot is Travis starting up a Linux machine and running 
+              the tests for a video game I was working on.
+              <br>
+              The neat thing is that it integrates with GitHub. Every time I push out a change, 
+              Travis gets a notification via the GitHub API and schedules a fresh test run.
+              <br>
+              Travis will also get notifications when someone has submitted a Pull Request to propose 
+              a change to my project, and so kick off tests to tell me whether this new contribution 
+              passes the tests.
+              <br>
               image credit - http://blog.travis-ci.com/2013-07-17-introducing-travis-our-new-mascot/
             </aside>
           </section>
@@ -217,6 +241,15 @@
             <h2>Travis CI + GitHub Pages = &lt;3</h2>
             <img src="img/travis-github-pages.png" width="90%">
             <aside class="notes">
+              But, there are other things Travis can do before, during, or after running tests.
+              <br>
+              Something I wanted to do with this video game is to publish a new version of it to
+              GitHub Pages, every time I pushed out a change that passed all my tests.
+              <br>
+              So, here, you can see some complicated glue code I wrote which does just that.
+              The neat thing is that Travis let's you put encrypted things into the configuration
+              so that you can put things like a GitHub API key in there to give Travis access
+              to push to GitHub Pages on your behalf.
             </aside>
           </section>
           <section>
@@ -224,11 +257,19 @@
             <ul class="nobullets">
               <li class="fragment"><i class="thumbs-up"></i><strong>Free as in beer</strong></li>
               <li class="fragment"><i class="thumbs-up"></i><strong>Works with GitHub</strong></li>
-              <li class="fragment"><i class="thumbs-up"></i><strong>Runs your code &amp; tests as-is</strong></li>
-              <li class="fragment"><i class="thumbs-up"></i><strong>Very hackable</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Runs your code &amp; tests</strong></li>
               <li class="fragment"><i class="thumbs-down"></i><strong>Slow during peak usage hours</strong></li>
             </ul>
             <aside class="notes">
+              free - except for private repos
+              <br>
+              github - reacts to changes in your repos
+              <br>
+              runs your code - you don't have to do much of anything special. the same code and tests
+              that would run on your computer at home will run on travis.
+              <br>
+              slow - it will sometimes take awhile for travis to get around to running your tests
+              during peak usage hours. but, you can't really complain too much about free computing power
             </aside>
           </section>
         </section>
@@ -237,6 +278,9 @@
           <section>
             <h2>Heroku</h2>
             <aside class="notes">
+              Heroku is a nifty platform for hosting web applications. 
+              I use it a lot for little node.js projects and experiments.
+              <br>
               image credit - https://www.heroku.com/home
             </aside>
           </section>
@@ -244,6 +288,18 @@
             <h2>Heroku + GitHub = &lt;3</h2>
             <img src="img/heroku-deploy.png" width="90%" class="transparent">
             <aside class="notes">
+              And one of the coolest recent features on Heroku is this purple button.
+              <br>
+              You put it in the README of a GitHub repo. And, when you click it, Heroku
+              automagically grabs your project and deploys it on their servers.
+            </aside>
+          </section>
+          <section>
+            <h2>Heroku + Travis CI = &lt;3</h2>
+            <img src="img/heroku-travis.png" width="90%" class="transparent">
+            <aside class="notes">
+              And like that thing I did earlier with GitHub Pages, you can also configure
+              Travis to deploy a new version of your app to Heroku whenever tests pass.
             </aside>
           </section>
           <section>
@@ -251,11 +307,21 @@
             <ul class="nobullets">
               <li class="fragment"><i class="thumbs-up"></i><strong>Free as in beer</strong></li>
               <li class="fragment"><i class="thumbs-up"></i><strong>Works with GitHub</strong></li>
-              <li class="fragment"><i class="thumbs-up"></i><strong>Runs your code</strong></li>
-              <li class="fragment"><i class="thumbs-up"></i><strong>Very hackable</strong></li>
-              <li class="fragment"><i class="thumbs-down"></i><strong>Slow during peak usage hours</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Works with Travis CI</strong></li>
+              <li class="fragment"><i class="thumbs-up"></i><strong>Your code works elsewhere</strong></li>
+              <li class="fragment"><i class="thumbs-down"></i><strong>Apps shut down after inactivity</strong></li>
             </ul>
             <aside class="notes">
+              free beer - for very small apps, heroku is free. you can have a little bit of
+              database space, and one web server working for you
+              <br>
+              your code - Heroku makes a few more demands on your code than Travis, but
+              they're not very big demands. For the most part, whatever you have working on
+              Heroku can be moved to another service provider with just a little bit of tweaking.
+              <br>
+              inactivity - if you don't use an app for awhile, Heroku will shut it down.
+              It will start up again the next time you try to use it, but there will be a long
+              pause as things come back awake.
             </aside>
           </section>
         </section>
@@ -263,6 +329,7 @@
         <section>
           <section data-background="img/c9.png">
             <h2>Cloud9</h2>
+            <img class="fragment transparent" src="img/c9-workspace.png">
             <aside class="notes">
               The free tier is like a personal Raspberry PI in the cloud.
               image credit - https://c9.io/
@@ -275,6 +342,14 @@
             <h2>IFTTT</h2>
             <img class="fragment" src="http://decafbad.com/blog/images/2011/11/social-media-cyborg.png" width="50%">
             <aside class="notes">
+              * ifttt is handy and I use it for automating some social media stuff
+
+              * But, it's a bad example of the kind of cloud service I really want to be using
+
+              * While it *is* free as in beer, there is no direct open source equivalent to it
+              and all of the triggers and rules I've set up on it are stuck there. If IFTTT ever
+              goes away, so does all my stuff.
+
               image credit - http://lhshelpdesk.com/2015/01/29/ifttt-by-matt-germano/
             </aside>
           </section>
@@ -285,6 +360,17 @@
           <p class="fragment"><img width="98%" data-src="img/eve-spreadsheet-formula.png"></p>
           <p class="fragment"><img width="75%" data-src="img/eve-spreadsheet.png"></p>
           <aside class="notes">
+            * I use Google docs spreadsheets to help me make internet spaceship money in EVE Online
+
+            * While there are lots of spreadsheets out there, some even Open Source, my particular
+            usage here is fairly tied to Google Docs. It uses Google's own proprietary formula functions
+            to access web APIs to look up market prices in game. 
+            
+            * If Google Spreadsheets ever goes away, I will probably use any work I've done here.
+            So, I try not to do too much here beyond kind of throwaway scratchpad work. Anything
+            more than that, and I try to shift the effort into writing my own tools that work on
+            computers I own, or on Heroku.
+
             image credit - http://googledocs.blogspot.com/
           </aside>
         </section>
@@ -293,9 +379,36 @@
           <section data-background="http://astoundcom.com/astound-communications/wp-content/uploads/2011/09/AStoundcom-Amazon-Web-Services.jpg">
             <h2>Amazon Web Services</h2>
             <aside class="notes">
+              * Amazon Web Services is kind of like the uber cloud. Almost any kind of computer
+              you want to borrow, they have it in Virtual Machine form.
+
+              * For example, I wanted to try running an old-school DOS BBS but make it accessible
+              from the internet instead of from a dial-up phone line. But, it only worked on Windows 2000
+              or earlier. Well, it turns out they have ready made computers with Windows 2000 installed.
+              So, I fired one of those up and spent a weekend playing with BBS software.
+
+              * AWS has a free tier that you can use for a year as a new customer.  
+              Me, I've been a customer since early 2006, before there even was a free tier.
+              But, you can do quite a lot with that before your first year runs out.
+
+              * Still, that said, much of AWS is so cheap for personal use that it's almost-free beer.
+
+              * For example, I moved my personal blog.lmorchard.com from WordPress to my own
+              system that publishes to Amazon S3. I pay a few pennies a month to keep it running.
+
+              (( git + gulp + Amazon S3 example? ))
+
+
               image credit - http://www.astoundcom.com/comparing-cloud-providers%E2%80%99-pricing-models-to-ec2-%E2%80%A6-%E2%80%9Cthe-devil-is-in-the-details%E2%80%9D/
             </aside>
           </section>
+        </section>
+
+        <section>
+          <h2>Wrapping up</h2>
+          <ul class="nobullets">
+
+          </ul>
         </section>
 
       </div>
